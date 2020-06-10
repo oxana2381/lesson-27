@@ -73,11 +73,11 @@
 }
 h1{
     font-size: 16px;
-    font-family: 'Crimson Text', serif;
-    width: 50%;
+    font-family: 'Crimson Text', serif; 
     color: #1f2280;
     height: 30px;
     margin-top: 20px;
+    margin-bottom: 15px;
     padding-left: 30px;
     
 }
