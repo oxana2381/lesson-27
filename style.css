@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box; }
 
+
+ @media (min-width: 1024px){
     #apod{
         padding: 20px 30px;
         display: flex;
@@ -11,7 +13,7 @@
         flex-flow: row wrap;
         width: 100%;
         
-    }
+    }}
     .buttoning{
         padding-top: 20px;
         padding-left: 150px;
@@ -56,7 +58,7 @@
 
    .image{
         
-        padding-right: 300px;}
+        padding-left: 25px;}
 
         @media (min-width: 1024px){
             .image{
@@ -65,13 +67,13 @@
 
  
 
-  p{
-display: none;
-      
-  }
-   date{
-      display: none;
-  }
+        p{
+            display: none;
+             
+         }
+  date{
+    display: none;
+}
 h1{
     font-size: 16px;
     font-family: 'Crimson Text', serif;
@@ -79,6 +81,7 @@ h1{
     color: #1f2280;
     height: 30px;
     margin-top: 20px;
+    padding-left: 30px;
     
 }
 @media (min-width: 1024px){
