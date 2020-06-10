@@ -6,11 +6,22 @@ function Apod(id){
     let body = document.body;
     this.container = document.createElement('div');
     this.container.setAttribute('id', this.id);
-    this.dateFormatter = dateFormatter;
+   // this.dateFormatter = dateFormatter;
+    this. dateFormatter = function() {
+        var now = this.date;
+        var y = now.getFullYear();
+        var m = now.getMonth() + 1;
+        var d = now.getDate();
+        var mm = m < 10 ? '0' + m : m;
+        var dd = d < 10 ? '0' + d : d;
+        return '' + y + '-' + mm + '-' + dd;
+    }
 
-    this. renderApp = function(data) {
+    this.renderApp = function(data) {
+     
         let title = document.createElement('h1');
-        title.innerText = data.title;
+       title.innerText = data.title;
+      
         
     
         let imageDiv = document.createElement('div');
@@ -27,8 +38,8 @@ function Apod(id){
         } else {
             let image = document.createElement('img');
             image.setAttribute('src', data.url);
-            image.setAttribute('width', '450');
-            image.setAttribute('height', '300');
+           // image.setAttribute('width', '550');
+           // image.setAttribute('height', '400');
             imageDiv.append(image);
         }
         let paragraph = document.createElement('p');
@@ -52,15 +63,15 @@ function Apod(id){
        
 
 
-    this.addPictureOfDay  = function() {
-        let element = document.createElement('div');
-
+    this.addPictureOfDay=function() {
+        let element = document.createElement('date');
+        
       if(this.date===undefined ) {
-       this.date = new Date;
+       this.date = new Date();
     } else {
         this.date = new Date(this.date.setDate(this.date.getDate() -1))
        
-    };
+    }
           
         
         
@@ -76,18 +87,8 @@ function Apod(id){
         element.innerText = this.dateFormatter();
         this.container.append(element)
     }
-    this.addPictureOfDay ();
+    this.addPictureOfDay();
     body.append(this.container);
 }
 
-let apod = new Apod('apod');
-
-function dateFormatter () {
-    var now = this.date;
-    var y = now.getFullYear();
-    var m = now.getMonth() + 1;
-    var d = now.getDate();
-    var mm = m < 10 ? '0' + m : m;
-    var dd = d < 10 ? '0' + d : d;
-    return '' + y + '-' + mm + '-' + dd;
-}
+const apod = new Apod('apod');
